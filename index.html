@@ -4,11 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/style.css" />
     <title>Weather Dashboard</title>
 </head>
 <body>
+    <header>
+        <h1 class="header text-center p-2">Weather Dashboard</h1>
+    </header>
+
+    <div class="main-body row">
+        <aside class="search col-3 px-4">
+                <form>
+                    <label for="search">Search for a City:</label>
+                    <input type="text" placeholder="City" name="search" />
+                    <button class="rounded" type="submit">Search</button>
+                </form>
+                <div id="city-list">
+                    <form id="history"></form>
+                </div>
+            </aside>
     
+
+        <div id="todays-weather col-9">
+            <div class="row mr-0">
+                <div class="col-lg-11 card m-3" id="today-weather">
+                    <div class="card-body">
+                        <h3 id="city-name" class="city-name align-middle"></h3>
+                        <img id="current-pic" alt="">
+                        <p id="temperature"></p>
+                        <p id="humidity"></p>
+                        <p id="wind-speed"></p>
+                        <p id="UV-index"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-9" id="five-day-forcast">
+            <div class="col-12">
+                <h3>5-Day Forecast</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-2 forecast m-2 rounded"></div>
+            <div class="col-2 forecast m-2 rounded"></div>
+            <div class="col-2 forecast m-2 rounded"></div>
+            <div class="col-2 forecast m-2 rounded"></div>
+            <div class="col-2 forecast m-2 rounded"></div>  
+        </div>
+    
+    </div>
 
 
     <script src="./assets/script.js"></script>

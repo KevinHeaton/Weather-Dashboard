@@ -1,0 +1,14 @@
+:root {
+  --primary-color: rgb(10, 3, 128);
+  --secondary-color: rgb(33, 31, 31);
+}
+
+.header {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.forecast {
+  background-color: var(--secondary-color);
+  color: white;
+}
