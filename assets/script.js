@@ -19,8 +19,7 @@ function createPage() {
   function getCurrentWeather (city) {
     let searchURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + key;
 
-    fetch.get(searchURL)
-      .then(function (response) {
+    fetch(searchURL).then(function (response) {
         const currentDate = new Date(response.data.dt * 1000);
         const month = currentDate.getMonth() + 1;
         const day = currentDate.getDate();
@@ -35,8 +34,7 @@ function createPage() {
         let lat = response.data.coord.lat;
         let lon = response.data.coord.lon;
         let uvSearchURL = "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + key + "&cnt=1";
-        fetch.get(uvSearchURL)
-          .then(function (response) {
+        fetch(uvSearchURL).then(function (response) {
             let uvIndex = document.createElement("span");
 
             if (response.data[0].value < 4) {
@@ -54,8 +52,7 @@ function createPage() {
         
         let cityID = response.data.id;
         let forecastSearchURL = "https://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&appid=" + key;
-          fetch.get(forecastSearchURL)
-            .then(function (response) {
+          fetch(forecastSearchURL).then(function (response) {
               fivedayEl.classList.remove("d-none");
               
               const forecastEls = document.querySelectorAll(".forecast");
@@ -106,7 +103,7 @@ function createPage() {
     return Math.floor((K - 273.15) * 1.8 + 32);
   }
 
-  function showHistory() {
+    function showHistory() {
     historyEl.innerHTML = "";
     for (let i = 0; i < searchHistory.length; i++) {
       const historyCity = document.createElement('input');
