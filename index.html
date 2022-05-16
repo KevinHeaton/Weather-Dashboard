@@ -18,10 +18,11 @@
         <aside class="search col-3 px-4">
                 <form>
                     <label for="search">Search for a City:</label>
-                    <input type="text" placeholder="City" name="search" />
-                    <button class="rounded" type="submit">Search</button>
+                    <input id="search-city" class="form-style" type="text" placeholder="City" name="search" />
+                    <button id="button" class="rounded" type="submit">Search</button>
                 </form>
                 <div id="city-list">
+                    <button class="rounded" type="button" id="clear">Clear History</button>
                     <form id="history"></form>
                 </div>
             </aside>
